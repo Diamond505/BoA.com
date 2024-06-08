@@ -1,0 +1,168 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #edc00d;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    font-size: 90px;
+    background-color: #000;
+    color: #edc00d;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+header .logo {
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #edc00d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+/* Main Section Styling */
+main {
+    padding: 20px;
+    text-align: center; /* Center-aligns the content */
+}
+
+section, article {
+    background-color: #000;
+    padding: 10px;
+    margin: 50px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #edc00d;
+    align-items: center;
+}
+
+h1, h2 {
+    font-size: 40px;
+    color: #edc00d;
+}
+
+/* Styles for the About page */
+.about-article {
+    background-color: #000;
+    padding: 10px;
+    margin: 20px auto; /* Center the section and article */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #edc00d;
+    max-width: 80%; /* Make the text narrower */
+    border: 1px solid #edc00d; /* Add a thin border around the text */
+}
+
+p.about-title {
+    color: whitesmoke;
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p.about {
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 80%; /* Adjust this value as needed */
+    margin: 0px auto; /* Center the video container */
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 40%;
+    border: none;
+}
+
+.sign-up {
+    background-color: #000;
+    padding: 10px;
+    margin: 20px auto 0; /* Center the section and article, no margin at the bottom */
+    color: #edc00d;
+    max-width: 80%; /* Make the text narrower */
+    clear: both; /* Clear floats to prevent overlapping with the video */
+}
+
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #edc00d;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Driver List Styling */
+.driver-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 5px; /* Reduce the padding around the list */
+    border: 1px solid #edc00d; /* Border around the list */
+    border-radius: 10px; /* Round the corners of the border */
+    max-width: 40%; /* Adjust the maximum width of the list */
+    margin: 0 auto; /* Center the list */
+}
+.driver-list li {
+    margin: 2px 0; /* Reduce the margin between list items */
+    padding: 2px; /* Reduce the padding inside the list items */
+    box-sizing: border-box;
+}
+.driver-list li:last-child {
+    border-bottom: none;
+}
+.driver-number {
+    font-size: 70px; /* Adjust the font size for the numbers */
+    font-weight: bold; /* Make the numbers bold */
+    margin-right: 10px; /* Space between the number and the name */
+    border-right: 1px solid #edc00d; /* Border between the number and the name */
+    padding-right: 10px; /* Padding inside the number */
+}
+.driver-name {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 55px; /* Adjust the font size for the driver names */
+    font-weight: normal; /* Font weight for the driver names */
+    color: #edc00d; /* Color for the driver names */
+    padding-left: 10px; /* Padding inside the name */
+}

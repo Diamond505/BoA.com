@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - BoA-eSports</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Up one level to access styles.css -->
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html"><img src="../Images/BoALogoYellowTrans.png" alt="BoA-logo" class="logo" /></a></h1> <!-- Up one level to access Images directory -->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li> <!-- Up one level to access index.html -->
+                <li><a href="../about.html">About</a></li> <!-- Up one level to access about.html -->
+                <li><a href="../drivers.html">Drivers</a></li> <!-- Up one level to access drivers.html -->
+                <li><a href="../schedule.html">Schedule</a></li> <!-- Up one level to access schedule.html -->
+                <li><a href="results.html">Results</a></li>
+                <li><a href="../contact.html">Contact</a></li> <!-- Up one level to access contact.html -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="results-section">
+            <h2>Race Results</h2>
+            <div id="race-results-container"></div>
+            <h2>Qualifying Results</h2>
+            <div id="qualifying-results-container"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 BoA-eSports. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchResults() {
+            try {
+                const response = await fetch('/results');
+                const data = await response.json();
+
+                const raceResultsContainer = document.getElementById('race-results-container');
+                const qualifyingResultsContainer = document.getElementById('qualifying-results-container');
+
+                // Assuming data is structured with raceResults and qualifyingResults properties
+                const raceResults = data.raceResults;
+                const qualifyingResults = data.qualifyingResults;
+
+                // Display race results
+                if (raceResults && raceResults.length) {
+                    const raceTable = createResultsTable(raceResults);
+                    raceResultsContainer.appendChild(raceTable);
+                } else {
+                    raceResultsContainer.textContent = 'No race results available.';
+                }
+
+                // Display qualifying results
+                if (qualifyingResults && qualifyingResults.length) {
+                    const qualifyingTable = createResultsTable(qualifyingResults);
+                    qualifyingResultsContainer.appendChild(qualifyingTable);
+                } else {
+                    qualifyingResultsContainer.textContent = 'No qualifying results available.';
+                }
+            } catch (error) {
+                console.error('Error fetching results:', error);
+            }
+        }
+
+        function createResultsTable(results) {
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            const headerRow = document.createElement('tr');
+            const headers = ['Position', 'Driver', 'Time'];
+            headers.forEach(headerText => {
+                const th = document.createElement('th');
+                th.textContent = headerText;
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+
+            results.forEach(result => {
+                const row = document.createElement('tr');
+                const positionCell = document.createElement('td');
+                positionCell.textContent = result.position;
+                row.appendChild(positionCell);
+
+                const driverCell = document.createElement('td');
+                driverCell.textContent = result.driver;
+                row.appendChild(driverCell);
+
+                const timeCell = document.createElement('td');
+                timeCell.textContent = result.time;
+                row.appendChild(timeCell);
+
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            return table;
+        }
+
+        fetchResults();
+    </script>
+</body>
+</html>
