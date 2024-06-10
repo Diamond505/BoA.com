@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoA.com</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1><a href="index.html"><img src="Images/BoALogoYellowTrans.png" alt="BoA-logo" class="logo" /></a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="drivers.html">Drivers</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="standings.html">Standings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2 class="welcome-title">Overall Standings</h2>
+    <h3 class="standings-title">GT3 Sunday Standings</h3>
+    <table id="grid-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Driver</th>
+          <th>Last SteamId</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <p>&copy; 2024 BoA-eSports. All rights reserved.</p>
+  </footer>
+  <script src="standings.js"></script>
+  <script>
+  function addDriver(driverName, steamId) {
+    var table = document.querySelector('#grid-table tbody');
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    cell1.innerHTML = table.rows.length;
+    cell2.innerHTML = driverName;
+    cell3.innerHTML = steamId;
+  }
+  </script>
+</body>
+</html>
+</html>
+

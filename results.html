@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoA.com</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html"><img src="Images/BoALogoYellowTrans.png" alt="BoA-logo" class="logo" /></a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="drivers.html">Drivers</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2 class="welcome-title">Results and standings</h2>
+    <div>
+      <select id="round-select">
+        <option value="Results\Barcelona quali.csv">Round 1 Q</option>
+        <option value="Results\Barcelona Race R1.csv">Round 1 R</option>
+        <option value="Results\Donington quali.csv">Round 2 Q</option>
+        <option value="Results\Donington Race R1.csv">Round 2 R</option>
+        <option value="Results\SilverStone Q1.csv">Round 3 Q1</option>
+        <option value="Results\SilverStone Q2.csv">Round 3 Q2</option>
+        <option value="Results\SilverStone Race 1 R3.csv">Round 3 R1</option>
+        <option value="Results\SilverStone Race2 R3.csv">Round 3 R2</option>
+        <option value="Results\Kyalami quali.csv">Round 4 Q</option>
+        <option value="Results\Kyalami Race R4.csv">Round 4 R</option>
+        <option value="Results\Spa quali.csv">Round 5 Q</option>
+        <option value="Results\Spa Race R5.csv">Round 5 R</option>
+        <!-- Add more options as needed -->
+      </select>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BoA.com</title>
+        <link rel="stylesheet" href="styles.css">
+      </head>
+      <body>
+        <main>
+          <div>
+            <!-- Button to load round -->
+            <button id="load-round">Load Round</button>
+          </div>
+          <table id="grid-table"></table>
+        </main>
+        <footer>
+          <p>&copy; 2024 BoA-eSports. All rights reserved.</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            function loadCSV(file) {
+              $.get(file, function(data) {
+                const rows = data.trim().split('\n').map(row => row.split(';'));
+                populateTable(rows);
+              }).fail(function() {
+                console.error('Error: Failed to load CSV file');
+              });
+            }
+      
+            function populateTable(data) {
+              const table = $('#grid-table');
+              table.empty();
+      
+              // Extract headers from the first row
+              const headers = data[0];
+              const headerRow = $('<tr>').addClass('table-header');
+              headers.forEach(header => {
+                const th = $('<th>').text(header);
+                headerRow.append(th);
+              });
+              table.append(headerRow);
+      
+              // Add data rows
+              for (let i = 1; i < data.length; i++) {
+                const row = data[i];
+                const tr = $('<tr>');
+                row.forEach(cell => {
+                  const td = $('<td>').text(cell);
+                  tr.append(td);
+                });
+                table.append(tr);
+              }
+            }
+      
+            $('#load-round').click(function() {
+              const selectedFile = $('#round-select').val();
+              loadCSV(selectedFile);
+            });
+      
+            // Load the first round by default
+            loadCSV('Results\Barcelona quali.csv');
+          });
+        </script>
+      </body>
+      </html>
+      

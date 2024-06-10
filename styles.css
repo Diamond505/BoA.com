@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #edc00d;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    display: block;
+    color: #edc00d;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: #ddd;
+    font-size: 25px;
+  }
+
+main {
+    background-color: #333;
+    color: #edc00d;
+    padding-bottom: 80px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0%;
+    background-color: #333;
+    color: #edc00d;
+    text-align: center;
+    padding: 20px 0;
+}
+
+body {
+    background-color: #333;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #edc00d;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    height: 150px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+}
+
+.race-box {
+    border: 1px solid #edc00d;
+    border-radius: 8px;
+    padding: 50px;
+    margin: 50px;
+    text-align: center;
+    width: 700px;
+    display: inline-block;
+}
+
+.race-box img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#load-round {
+    background-color: #edc00d;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#load-round:hover {
+    background-color: black;
+}
+
+.about-title {
+    letter-spacing: 1px;
+    font-size: 60px;
+    font-weight: bolder;
+    margin-bottom: 3px;
+    margin-top: 10px;
+}
+
+.about-article {
+    background-color: #333;
+    margin-top: 20px;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid #edc00d;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+    max-width: 1300px;
+    max-height: auto;
+}
+
+.about {
+    color: antiquewhite;
+    font-size: 30px;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.standings-title {
+    letter-spacing: 1px;
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 3px;
+    margin-top: 10px;
+}
+
+.welcome-title {
+    font-size: 90px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+section {
+    background-color: #333;
+    color: #edc00d;
+}
+
+h2 {
+    color: antiquewhite;
+    margin-top: 20px;
+}
+
+.video-container {
+    top: -10px;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+}
+
+#grid-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#grid-table th, #grid-table td {
+    font-size: 25px;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#grid-table tr:nth-child(even) {
+    background-color: #474430;
+}
+
+#grid-table tr:hover {
+    background-color: #ddd;
+}
+
+#grid-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #edc00d;
+    color: black;
+    text-align: center;
+}
+
+.SocialMediaImage {
+    width: 500px; /* Adjust as needed */
+    height: 500px; /* Adjust as needed */
+}
+
+.sign-up {
+    color: #edc00d;
+    background-color: #333;
+    font-family: Impact, haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.3);
+    text-decoration: underline;
+    text-decoration-color: #edc00d;
+    padding: 40px;
+}
+
+.driver-list {
+    font-size: 45px;
+    color: whitesmoke;
+    background-color: #333;
+    margin-top: 20px;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid #edc00d;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+    max-width: 1300px;
+    max-height: auto;
+    list-style: none;
+    padding-left: 0;
+}
+
+.driver-number {
+    margin-right: 10px;
+    color: #edc00d;
+    font-size: 60px;
+}
+
