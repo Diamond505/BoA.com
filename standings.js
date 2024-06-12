@@ -2,6 +2,40 @@ $(document).ready(function() {
     // Define an object to map Steam IDs to driver names
     const steamIdToName = {};
 
+    // Define the points structure
+    const pointsMapping = {
+        1: 50,
+        2: 44,
+        3: 40,
+        4: 36,
+        5: 33,
+        6: 30,
+        7: 28,
+        8: 26,
+        9: 24,
+        10: 22,
+        11: 20,
+        12: 19,
+        13: 18,
+        14: 17,
+        15: 16,
+        16: 15,
+        17: 14,
+        18: 13,
+        19: 12,
+        20: 11,
+        21: 10,
+        22: 9,
+        23: 8,
+        24: 7,
+        25: 6,
+        26: 5,
+        27: 4,
+        28: 3,
+        29: 2,
+        30: 1
+    };
+
     function generateStandings(data) {
         const standingsData = {};
         const headers = data[0];
@@ -28,8 +62,8 @@ $(document).ready(function() {
                 standingsData[steamId] = { points: 0, driver: driverName };
             }
 
-            // Assign points based on the position (you can adjust this logic as needed)
-            standingsData[steamId].points += (data.length - position);
+            // Assign points based on the position using the pointsMapping
+            standingsData[steamId].points += pointsMapping[position] || 0; // Default to 0 points if position not in mapping
         }
 
         return standingsData;
@@ -103,3 +137,4 @@ $(document).ready(function() {
 
     loadRaceData();
 });
+

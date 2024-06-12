@@ -1,11 +1,79 @@
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Global Styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Link Styles */
+a {
+    color: white; /* Changes the link color to white */
+    text-decoration: none; /* Removes the underline from the link */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Adds transition for color and text-decoration */
+}
+
+a:hover {
+    color: #edc00d; /* Changes the link color on hover */
+    text-decoration: underline; /* Adds an underline on hover */
+}
+
+/* Additional example for more complex animations */
+a {
+    position: relative;
+    display: inline-block;
+    color: white; /* Changes the link color to white */
+    text-decoration: none; /* Removes the underline from the link */
+    transition: color 0.3s ease; /* Adds transition for color */
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #edc00d;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #000000;
+    font-family: 'anton', sans-serif;
+    color: #edc00d;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
 header {
-    background-color: #333;
+    font-family: 'orbitron', sans-serif;
+    background-color: #000000;
     color: #edc00d;
     padding: 10px;
     position: sticky;
@@ -14,90 +82,188 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-nav {
+header h1 {
+    margin: 0;
+}
+
+header nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-nav ul {
+header nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0;
 }
 
-nav ul li {
+header nav ul li {
     margin: 0 10px;
 }
 
-nav ul li a {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 40px;
-    display: block;
+header nav ul li a {
+    font-size: 3em;
+    font-weight: bold;
     color: #edc00d;
-    text-align: center;
-    padding: 14px 16px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header nav ul li a:hover {
     text-decoration: none;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-a {
-    color: #ddd;
-    font-size: 25px;
-  }
-
-main {
-    background-color: #333;
-    color: #edc00d;
-    padding-bottom: 80px;
-}
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 0%;
-    background-color: #333;
-    color: #edc00d;
-    text-align: center;
-    padding: 20px 0;
-}
-
-body {
-    background-color: #333;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
-    color: #edc00d;
-}
-
+/* Logo Styles */
 .logo {
     display: block;
-    margin: auto;
+    margin: 20px auto;
     height: 150px;
-    margin-bottom: 30px;
-    margin-top: 30px;
     border-radius: 20px;
+    border: 2px solid #edc00d;
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
 }
 
-.race-box {
-    border: 1px solid #edc00d;
-    border-radius: 8px;
-    padding: 50px;
-    margin: 50px;
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 30px;
+    background: linear-gradient(45deg, #edc00d, #f5d900, #edc00d);
+    background-size: 600% 600%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Section Styles */
+section {
+    color: #edc00d;
+    margin: 20px 0;
+}
+
+h2 {
+    color: white;
+    margin: 20px 0;
+}
+
+.welcome-title {
+    font-family: 'orbitron', sans-serif;
+    font-size: 5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-container {
+    position: relative;
+    width: 50%;
+    height: 0;
+    padding-bottom: 28.125%;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sign-up Button Styles */
+.sign-up {
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 30px;
+    color: #edc00d;
+    font-size: 2.5em;
+    padding: 10px 20px;
+    border: 2px solid #edc00d;
+    border-radius: 5px;
+    background-color: #000;
+    text-decoration: underline;
+    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sign-up:hover {
+    background-color: #edc00d;
+    color: #000;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #edc00d;
     text-align: center;
-    width: 700px;
-    display: inline-block;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+/* Social Media Styles */
+.SocialMedia {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fffae4;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.SocialMedialink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #000;
+    margin: 0 auto 20px;
+}
+
+.SocialMediaImage {
+    width: 200px;
+    height: auto;
+}
+
+.SocialMediaText {
+    margin-left: 20px;
+}
+
+.SocialMediaText h3 {
+    margin: 0;
+}
+
+/* Additional Element Styles */
+.race-box {
+    background-color: #000000;
+    border: 1px solid #edc00d;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 50px auto;
+    text-align: center;
+    width: 80%;
+    max-width: 700px;
+    display: block;
 }
 
 .race-box img {
     width: 100%;
+    border: 3px solid #edc00d;
     border-radius: 8px;
+}
+
+#round-select {
+    background-color: #333;
+    color: #edc00d;
+    border: 2px solid #edc00d;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#round-select option {
+    background-color: #333;
+    color: #edc00d;
 }
 
 #load-round {
@@ -108,7 +274,7 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.5em;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
@@ -119,90 +285,58 @@ body {
 }
 
 .about-title {
-    letter-spacing: 1px;
-    font-size: 60px;
+    font-family: 'orbitron', sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 3.5em;
     font-weight: bolder;
-    margin-bottom: 3px;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .about-article {
-    background-color: #333;
-    margin-top: 20px;
-    margin-bottom: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 10px solid #edc00d;
+    background: linear-gradient(to right, #201a01, #474100);
+    margin: 20px auto;
+    padding: 20px;
+    border: 10px solid #000000;
     border-radius: 8px;
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
-    max-width: 1300px;
-    max-height: auto;
+    max-width: 90%;
 }
 
 .about {
     color: antiquewhite;
-    font-size: 30px;
-    max-width: 900px;
-    margin: auto;
+    font-size: 2.5em;
+    max-width: 1200px;
+    margin: 20px auto;
     margin-bottom: 40px;
 }
 
 .standings-title {
+    color: #000000;
     letter-spacing: 1px;
-    font-size: 60px;
-    font-weight: normal;
-    margin-bottom: 3px;
-    margin-top: 10px;
-}
-
-.welcome-title {
-    font-size: 90px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
-}
-
-section {
-    background-color: #333;
-    color: #edc00d;
-}
-
-h2 {
-    color: antiquewhite;
-    margin-top: 20px;
-}
-
-.video-container {
-    top: -10px;
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60%;
-    height: 60%;
-    transform: translate(-50%, -50%);
+    font-size: 3em;
+    margin: 10px 0;
 }
 
 #grid-table {
+    color: #000000;
+    background-color: #ddd;
     width: 80%;
+    max-width: 1200px;
     border-collapse: collapse;
     margin: 20px auto;
     text-align: left;
 }
 
 #grid-table th, #grid-table td {
-    font-size: 25px;
-    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 1.5em;
+    border: 2px solid #000000;
     padding: 8px;
 }
 
 #grid-table tr:nth-child(even) {
-    background-color: #474430;
+    color: #edc00d;
+    background-color: #000000;
 }
 
 #grid-table tr:hover {
@@ -210,56 +344,91 @@ h2 {
 }
 
 #grid-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px 8px;
     background-color: #edc00d;
     color: black;
-    text-align: center;
-}
-
-.SocialMediaImage {
-    width: 500px; /* Adjust as needed */
-    height: 500px; /* Adjust as needed */
-}
-
-.sign-up {
-    color: #edc00d;
-    background-color: #333;
-    font-family: Impact, haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    margin-left: 50px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.3);
-    text-decoration: underline;
-    text-decoration-color: #edc00d;
-    padding: 40px;
 }
 
 .driver-list {
-    font-size: 45px;
+    font-size: 1.2em;
     color: whitesmoke;
-    background-color: #333;
-    margin-top: 20px;
-    margin-bottom: 10%;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: #000000;
+    margin: 20px auto;
+    padding: 20px;
     border: 10px solid #edc00d;
     border-radius: 8px;
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
-    max-width: 1300px;
-    max-height: auto;
+    max-width: 60%;
     list-style: none;
-    padding-left: 0;
 }
 
 .driver-number {
     margin-right: 10px;
     color: #edc00d;
-    font-size: 60px;
+    font-size: 2em;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul li {
+        margin: 5px;
+    }
+
+    header nav ul li a {
+        font-size: 1.2em;
+    }
+
+    .logo {
+        height: 100px;
+    }
+
+    .welcome-title {
+        font-size: 2em;
+    }
+
+    .sign-up {
+        font-size: 2.2em;
+        padding: 8px 16px;
+    }
+
+    .SocialMedialink {
+        width: 150px;
+        height: 150px;
+    }
+
+    .SocialMediaImage {
+        width: 100px;
+    }
+
+    .SocialMediaText {
+        margin-left: 10px;
+    }
+
+    .race-box {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    #grid-table {
+        width: 90%;
+        font-size: 1em;
+    }
+
+    #grid-table th, #grid-table td {
+        font-size: 1em;
+    }
+
+    .about {
+        font-size: 1.2em;
+    }
+
+    .driver-list {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .driver-number {
+        font-size: 1.5em;
+    }
+}
